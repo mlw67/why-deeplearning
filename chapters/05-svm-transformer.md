@@ -151,11 +151,11 @@ $$\text{Attention}(Q, K, V) = \frac{\Phi(Q)(\Psi(K)^T V)}{\Phi(Q)\Psi(K)^T \math
 
 ### 5.4.2 Performer与线性注意力
 
-**Performer**使用正随机特征：
+**Performer**使用正随机特征(FAVOR+)来近似softmax注意力核（注意：这与一般指数核的无限维特征映射不同，是一种有限维近似）：
 
 $$\phi(x) = \frac{\exp(-\|x\|^2/2)}{\sqrt{D}} [\exp(\omega_1^T x), \ldots, \exp(\omega_D^T x)]$$
 
-其中$\omega_i \sim \mathcal{N}(0, I)$。
+其中$\omega_i \sim \mathcal{N}(0, I)$。这满足$\mathbb{E}[\phi(x)^T\phi(y)] = \exp(x^T y)$。
 
 这给出：
 - 理论上无偏近似softmax注意力

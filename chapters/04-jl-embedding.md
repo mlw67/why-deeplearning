@@ -65,11 +65,11 @@ $$A_{ij} = \sqrt{\frac{3}{k}} \times \begin{cases} +1 & \text{概率 } 1/6 \\ 0 
 
 更激进的稀疏化也可行：
 
-**定理4.4（Li et al., 2006）**：对于$s = \sqrt{d}$，使用：
+**定理4.4（Li et al., 2006）**：对于$s = \sqrt{d}$（要求$d \geq 1$以保证$s \geq 1$），使用：
 
 $$A_{ij} = \sqrt{\frac{s}{k}} \times \begin{cases} +1 & \text{概率 } 1/(2s) \\ 0 & \text{概率 } 1 - 1/s \\ -1 & \text{概率 } 1/(2s) \end{cases}$$
 
-仍可保持JL性质，复杂度降至$O(nd/s) = O(n\sqrt{d})$。
+注意概率之和为$1/(2s) + (1-1/s) + 1/(2s) = 1$。仍可保持JL性质，复杂度降至$O(nd/s) = O(n\sqrt{d})$。
 
 ### 4.2.4 与PCA的对比
 

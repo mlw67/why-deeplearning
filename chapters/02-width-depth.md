@@ -86,9 +86,9 @@ $$R(N) = |\{r : \exists x \in r, N|_r \text{是线性的}\}|$$
 对于ReLU网络，有以下结果：
 
 **定理2.5**：深度为$L$、每层宽度为$n$的ReLU网络，其线性区域数量上界为：
-$$R(N) \leq \left(\prod_{l=1}^{L-1} \sum_{j=0}^{n} \binom{n}{j}\right) \cdot \sum_{j=0}^{n}\binom{n}{j}$$
+$$R(N) \leq \left(\prod_{l=1}^{L-1} \sum_{j=0}^{\min(n,d)} \binom{n}{j}\right) \cdot \sum_{j=0}^{\min(n,d)}\binom{n}{j}$$
 
-这可以简化为$O\left(\left(\frac{n}{d}\right)^{dL}\right)$，表明线性区域数量随深度指数增长。
+当$n \gg d$时，这可以简化为$O\left(n^{dL}\right)$，表明线性区域数量随深度指数增长。更精确地说，上界约为$\left(\frac{en}{d}\right)^{dL}$。
 
 ## 2.3 宽度与深度的权衡
 
